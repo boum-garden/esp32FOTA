@@ -435,6 +435,7 @@ bool esp32FOTA::execHTTPcheck()
             }
         } else {
             log_e("Error on HTTP request");
+            throw std::invalid_argument( "Error on HTTP request" );
         }
         http.end();  //Free the resources
         return false;
